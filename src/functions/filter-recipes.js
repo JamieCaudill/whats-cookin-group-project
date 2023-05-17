@@ -17,20 +17,39 @@ const filterByTag = (recipeData, tagInput) => {
   }
 };
 
-function filterByName(recipeData, name) {
-  var filteredRecipesByName = [];
-  var lowerCaseName = name.toLowerCase()
-  var lowerCaseRecipe;
-    for(var i = 0; i < recipeData.length; i++) {
-      lowerCaseRecipe = recipeData[i].name.toLowerCase()
-      if(lowerCaseRecipe.includes(lowerCaseName)) {
-        filteredRecipesByName.push(recipeData[i]);
-      };
-    };
+// function filterByName(recipeData, name) {
+//   var filteredRecipesByName = [];
+//   var lowerCaseName = name.toLowerCase()
+//   var lowerCaseRecipe;
+//     for(var i = 0; i < recipeData.length; i++) {
+//       lowerCaseRecipe = recipeData[i].name.toLowerCase()
+//       if(lowerCaseRecipe.includes(lowerCaseName)) {
+//         filteredRecipesByName.push(recipeData[i]);
+//       };
+//     };
+//   if (!filteredRecipesByName.length) {
+//     return 'No results';
+//   } 
+//   return filteredRecipesByName;
+// };
+
+const filterByName = (recipeData, name) => {
+  const filteredRecipesByName = [];
+  const lowerCaseName = name.toLowerCase();
+
+  recipeData.forEach(recipe => {
+    const lowerCaseRecipe = recipe.name.toLowerCase();
+    if (lowerCaseRecipe.includes(lowerCaseName)) {
+      filteredRecipesByName.push(recipe);
+    }
+  });
+
   if (!filteredRecipesByName.length) {
     return 'No results';
-  } 
+  }
+
   return filteredRecipesByName;
 };
+
 
 export { filterByTag, filterByName }
