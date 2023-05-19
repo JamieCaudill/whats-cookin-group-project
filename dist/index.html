@@ -11,20 +11,28 @@
   <body>
     <section class="home">
       <section class="home__header">
-        <img class="home__icon" src="/images/turing-logo.png">
+        <div class="home__header2">
+          <img class="home__icon" src="/images/turing-logo.png">
+          <button class="home__button class--hidden">Home Page</button>
+        </div>
         <h1>WHAT'S COOKIN'?</h1>
-        <button class="home__ubutton">New User</button>
+        <div>
+          <button class="home__ubutton">User</button>
+          <section>
+            <input class="home__searchInput" type="search" name="s" placeholder="Search" required="">
+            <img class="home__searchIcon" src="./images/search-icon.png">
+          </section>
+        </div>
       </section>
       <section class="categories">
+        <img class="categories__video" src="https://thumbs.dreamstime.com/b/food-panorama-copy-space-many-various-products-shot-top-dark-blue-wooden-background-flat-lay-place-text-200856024.jpg">
         <section class="categories__container">
-          <div class="categories__header">Choose a food category!</div>
           <div class="categories__salads categories--category" id="salad">Salads</div>
-          <div class="categories__hordoeuvres categories--category" id="hor d'oeuvre">Hor D'oeuvres</div>
+          <div class="categories__horsdoeuvres categories--category" id="hor d'oeuvre">Hors D'oeuvres</div>
           <div class="categories__mains categories--category" id="main course">Main Courses</div>
           <div class="categories__sides categories--category" id="side dish">Sides</div>
-          <div class="categories__all categories--category">View All</div>
+          <div class="categories__all categories--category" id="all">View All</div>
         </section>
-        <img class="categories__video" src="https://catch35.com/wp-content/uploads/2021/10/Seafood-low.gif">
       </section>
       <footer class="footer">
         <div class="footer__pic" id="1">pic1 with disc</div>
@@ -37,61 +45,43 @@
         <div class="footer__pic" id="8">pic8 with disc</div>
       </footer>
     </section>
-    <section class="all all--hidden">
+    <section class="user class--hidden">
+      <section class="user__header">
+        <h1 class="user__name"><!-- "Welcome ${user name}!" goes here --></h1>
+      </section>
+      <img class="user__icon" src="https://rubberb.com/blog/wp-content/uploads/2021/11/Gordon-Ramsay-Watch-Collection.webp" alt="a cook">
+      <section class="user__recipes">Your saved recipes are:
+        <!-- saved user recipes will go here. example 👇 -->
+      </section>
+    </section>
+    <section class="all class--hidden">
       <div class="all__container">
-
+        <!-- lists of recipes will go here -->
       </div> 
     </section>
-    <section class="recipe recipe--hidden">
+    <section class="recipe class--hidden">
       <section class="recipe__header">
-        <section class="recipe__header2">
-          <img class="recipe__turing" src="/images/turing-logo.png">
-          <button class="recipe__hbutton">Home Page</button>
+        <section class="recipe__header2"> 
         </section>
         <h1 class="recipe__title">Chocolate Chip Cookies!</h1>
         <button class="recipe__sbutton">Save Recipe</button>
       </section>
       <section class="recipe__main">
         <section class="recipe__left">
-          <img class="recipe__img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg">
-          <section class="recipe__ingredients">
-            <div class="recipe__ingredient1">ingredient1</div>
-            <div class="recipe__ingredient2">ingredient2</div>
-            <div class="recipe__ingredient3">ingredient3</div>
-            <div class="recipe__ingredient4">ingredient4</div>
-            <div class="recipe__ingredient5">ingredient5</div>
-            <div class="recipe__ingredient6">ingredient6...</div>
+          <div class="image__container"></div>
+          <section class="recipe__ingredients">Ingredients:
+            <!-- ingredients will go here -->
           </section>
           <section class="recipe__cost">
-            Cost of ingredients: $12
+            <!-- total cost will go here -->
           </section>
         </section>
         <section class="recipe__instructions">Instructions:
-          <div class="recipe__instruction">instruction 1:</div>
-          <div class="recipe__instruction">instruction 2:</div>
-          <div class="recipe__instruction">instruction 3:</div>
-          <div class="recipe__instruction">instruction 4:</div>
-          <div class="recipe__instruction">instruction 5:</div>
-          <div class="recipe__instruction">instruction 6:...</div>
+          <!-- instructions will go here -->
         </section>
       </section>
     </section>
-    <section class="user user--hidden">
-      <section class="user__header">
-        <section class="user__header2">
-          <img class="user__turing" src="/images/turing-logo.png">
-          <button class="user__hbutton">Home Page</button>
-        </section>
-        <h1 class="user__name">Welcome Sayde Welch!</h1>
-      </section>
-      <img class="user__icon" src="https://media.giphy.com/media/krtfaufO44Uz6/giphy.gif" alt="kitty playing with fish">
-      <section class="user__recipes">Your saved recipes are:
-        <div class="user__recipe">
-          <img class="user__img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg">
-          <p>Chocolate Chip Cookies!</p>
-        </div>
-      </section>
-    </section>
+    
   </body>
   <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
   <script src="bundle.js"></script>

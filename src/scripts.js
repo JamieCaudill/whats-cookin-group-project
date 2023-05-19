@@ -4,25 +4,17 @@ import './styles.css'
 import apiCalls from './apiCalls'
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
-import ingredientsData from './data/ingredients.js'
-import sampleRecipeData from './data/sample-recipes.js'
-import { viewAll, viewAllRecipes, viewSalads, viewHordoeuvres, viewMains, viewSides, viewFilteredRecipes, 
- } from './domUpdates.js'
+import './images/search-icon.png'
+// import { currentRecipe } from './data/data-model.js'
+import { allContainer, viewRecipes, viewSearchResults, homeButton, showHome, showUserPage,
+  categoriesContainer, selectRecipe, searchRecipes, saveButton, createRandomUser, userButton, saveRecipe } from './domUpdates.js'
 
-//Example of one way to import functions from the domUpdates file. You will delete these examples.
-// import {exampleFunction1, exampleFunction2} from './domUpdates.js'
+// EVENT LISTENERS //
 
-// exampleFunction1('heather')
-// exampleFunction2('heather')
-
-// console.log(ingredientsData)
-
-viewAll.addEventListener('click', viewAllRecipes)
-viewSalads.addEventListener('click', function(event) {
-  viewFilteredRecipes(event)})
-viewHordoeuvres.addEventListener('click', function(event) {
-  viewFilteredRecipes(event)})
-viewMains.addEventListener('click', function(event) {
-  viewFilteredRecipes(event)})
-viewSides.addEventListener('click', function(event) {
-  viewFilteredRecipes(event)})
+viewSearchResults.addEventListener('click', searchRecipes)
+userButton.addEventListener('click', showUserPage)
+homeButton.addEventListener('click', showHome)
+window.addEventListener('load', createRandomUser)
+categoriesContainer.addEventListener('click', viewRecipes);
+allContainer.addEventListener('click', selectRecipe)
+saveButton.addEventListener('click', saveRecipe)
