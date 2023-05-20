@@ -29,46 +29,48 @@ let globalIngredientsData = null;
 function fetchUserData() {
   return fetch("https://what-s-cookin-starter-kit.herokuapp.com/api/v1/users") 
     .then(response => response.json())
-    .then(data => {
-      globalUserData = data;
-    })
+    // .then(data => {
+    //   console.log("userData from fetch call", data)
+    //   // globalUserData = data;
+    // })
     .catch(error => console.error('Error fetching user data:', error));
 }
 //Get all recipes
 function fetchRecipesData() {
   return fetch("https://what-s-cookin-starter-kit.herokuapp.com/api/v1/recipes")
     .then(response => response.json())
-    .then(data => {
-      globalRecipesData = data;
-    })
+    // .then(data => {
+    //   console.log("recipesData from fetch call", data)
+    //   // globalRecipesData = data;
+    // })
     .catch(error => console.error('Error fetching recipes data:', error));
 }
-// Get all ingredients
+// // Get all ingredients
 function fetchIngredientsData() {
   return fetch("https://what-s-cookin-starter-kit.herokuapp.com/api/v1/ingredients")
     .then(response => response.json())
-    .then(data => {
-      globalIngredientsData = data;
-    })
+    // .then(data => {
+    //   console.log("ingredientData from fetch call", data)
+    //   // globalIngredientsData = data;
+   // })
     .catch(error => console.error('Error fetching another data:', error));
 }
-
-window.onload = function() {
-    fetchUserData();
-    fetchRecipesData();
-    fetchIngredientsData();
-  };
 
 //   Since these are asynchronous operations, the global variables will not be immediately available after the fetch functions are called. They will be available once the corresponding fetch request completes and the data is assigned.
 //   If we want to ensure all fetch requests are completed before we do something (like manipulating data or rendering UI), we can use Promise.all:
 
-window.onload = function() {
-    Promise.all([fetchUserData(), fetchRecipesData(), fetchgIngredientsData()])
-      .then(() => {
-        // All data is fetched and global variables are updated
-        // You can manipulate data or update UI here
-      })
-      .catch(error => console.error('Error:', error));
-  };
+// window.onload = function() {
+//     Promise.all([fetchUserData(), fetchRecipesData(), fetchIngredientsData()])
+//       .then(() => {
+//         // All data is fetched and global variables are updated
+//         // You can manipulate data or update UI here
+//       })
+//       .catch(error => console.error('Error:', error));
+//   };
 
 //   In this setup, the code inside the .then() of Promise.all will not run until all fetch requests are completed.
+
+export { fetchUserData,
+  fetchRecipesData,
+  fetchIngredientsData 
+}
