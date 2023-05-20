@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { filterByTag, filterByName } from '../src/functions/filter-recipes';
+import { filterByTag, filterByName, filterRecipes } from '../src/functions/filter-recipes';
 import recipeData from '../src/data/recipes'
 import sampleRecipeData from '../src/data/sample-recipes';
 
@@ -36,3 +36,33 @@ describe('filter recipes', () => {
     expect(filteredRecipes).to.equal('No results');
   })
 });
+
+describe('filterRecipes', () => {
+  it('should return recipes that match the search term in names or tags', () => {
+    const searchTerm = 'chocolate chip';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.have.lengthOf(3);
+    expect(filteredRecipes[0].name).to.equal('Loaded Chocolate Chip Pudding Cookie Cups');
+  });
+
+  it('should return recipes that match multiple search terms in names or tags', () => {
+    const searchTerm = 'chocolate pudding';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.have.lengthOf(4);
+    expect(filteredRecipes[0].name).to.equal('Loaded Chocolate Chip Pudding Cookie Cups');
+  });
+
+  it('should return all recipes when filter is set to "all"', () => {
+    const filter = 'all';
+    const filteredRecipes = filterRecipes(recipeData, filter);
+    expect(filteredRecipes).to.have.lengthOf(50);
+  });
+
+  it('should return "No results" when no recipes match the search term', () => {
+    const searchTerm = 'gnarwhale';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.equal('No results');
+  });
+});
+
+
