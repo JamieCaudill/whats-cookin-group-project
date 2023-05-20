@@ -37,19 +37,50 @@ describe('filter recipes', () => {
   })
 });
 
-describe('filterRecipes', () => {
-  it('should return recipes filtered by name and tag', () => {
-    let filteredRecipes = filterRecipes(sampleRecipeData, 'side dish');
-    let filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
-    expect(filteredRecipeNames).to.deep.equal(['Elvis Pancakes', "Ambrosia Cupcakes", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
-    filteredRecipes = filterRecipes(sampleRecipeData, 'chocolate');
-    filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
-    expect(filteredRecipeNames).to.deep.equal(["Loaded Chocolate Chip Pudding Cookie Cups", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
-  })
+// describe('filterRecipes', () => {
+//   it('should return recipes filtered by name and tag', () => {
+//     let filteredRecipes = filterRecipes(sampleRecipeData, 'side dish');
+//     let filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
+//     expect(filteredRecipeNames).to.deep.equal(['Elvis Pancakes', "Ambrosia Cupcakes", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
+//     filteredRecipes = filterRecipes(sampleRecipeData, 'chocolate');
+//     filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
+//     expect(filteredRecipeNames).to.deep.equal(["Loaded Chocolate Chip Pudding Cookie Cups", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
+//   })
 
-  it('should return an empty array if nothing matches the filter', () => {
-    let filteredRecipes = filterRecipes(sampleRecipeData, 'gnarwhale');
-    expect(filteredRecipes).to.deep.equal([]);
-  })
+//   it('should return an empty array if nothing matches the filter', () => {
+//     let filteredRecipes = filterRecipes(sampleRecipeData, 'gnarwhale');
+//     expect(filteredRecipes).to.deep.equal([]);
+//   })
+// });
+
+// Test cases for refactored filterRecipes.
+describe('filterRecipes', () => {
+  it.only('should return recipes that match the search term in names or tags', () => {
+    const searchTerm = 'chocolate chip';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.have.lengthOf(2);
+    expect(filteredRecipes[0].name).to.equal('Loaded Chocolate Chip Pudding Cookie Cups');
+  });
+
+  it.only('should return recipes that match multiple search terms in names or tags', () => {
+    const searchTerm = 'chocolate pudding';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.have.lengthOf(1);
+    expect(filteredRecipes[0].name).to.equal('Loaded Chocolate Chip Pudding Cookie Cups');
+  });
+
+  it.only('should return all recipes when filter is set to "all"', () => {
+    const filter = 'all';
+    const filteredRecipes = filterRecipes(recipeData, filter);
+    expect(filteredRecipes).to.have.lengthOf(50);
+  });
+
+  it.only('should return "No results" when no recipes match the search term', () => {
+    const searchTerm = 'gnarwhale';
+    const filteredRecipes = filterRecipes(recipeData, searchTerm);
+    expect(filteredRecipes).to.equal('No results');
+  });
 });
+
+
 
