@@ -34,35 +34,34 @@
           <div class="categories__all categories--category" id="all">View All</div>
         </section>
       </section>
+      <!-- do something with the footer -->
       <footer class="footer">
-        <div class="footer__pic" id="1">pic1 with disc</div>
-        <div class="footer__pic" id="2">pic2 with disc</div>
-        <div class="footer__pic" id="3">pic3 with disc</div>
-        <div class="footer__pic" id="4">pic4 with disc</div>
-        <div class="footer__pic" id="5">pic5 with disc</div>
-        <div class="footer__pic" id="6">pic6 with disc</div>
-        <div class="footer__pic" id="7">pic7 with disc</div>
-        <div class="footer__pic" id="8">pic8 with disc</div>
       </footer>
     </section>
     <section class="user class--hidden">
+      <input class="user__search" type="search" placeholder="search saved recipes" required="">
+      <img class="user__searchIcon" src="./images/search-icon.png">
       <section class="user__header">
         <h1 class="user__name"><!-- "Welcome ${user name}!" goes here --></h1>
       </section>
+      <p>Select recipe to view or right click to delete.</p>
+
       <img class="user__icon" src="https://rubberb.com/blog/wp-content/uploads/2021/11/Gordon-Ramsay-Watch-Collection.webp" alt="a cook">
-      <section class="user__recipes">Your saved recipes are:
-        <!-- saved user recipes will go here. example 👇 -->
+      <p>Select recipe to view or right click to delete.</p>
+      <section class="user__recipes">Your saved recipes will display here!
+        <!-- saved user recipes will go here -->
       </section>
     </section>
     <section class="all class--hidden">
+      <h1 class="all__header">Header Here</h1>
       <div class="all__container">
+        
         <!-- lists of recipes will go here -->
       </div> 
     </section>
     <section class="recipe class--hidden">
       <section class="recipe__header">
-        <section class="recipe__header2"> 
-        </section>
+        <button class="recipe__back">Back</button>
         <h1 class="recipe__title">Chocolate Chip Cookies!</h1>
         <button class="recipe__sbutton">Save Recipe</button>
       </section>

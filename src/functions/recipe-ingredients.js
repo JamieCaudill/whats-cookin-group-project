@@ -4,6 +4,7 @@ import ingredientsData from "../data/ingredients";
 import recipeData from "../data/recipes";
 
 const recipeIngredients = (recipeName) => {
+  
   const outputArray = [];
   const filteredRecipe = recipeData.find((recipe) => recipe.name === recipeName
    );
