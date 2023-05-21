@@ -17,6 +17,7 @@ viewSearchResults.addEventListener('click', () => {
 })
 userButton.addEventListener('click', showUserPage)
 homeButton.addEventListener('click', showHome)
+//window.addEventListener('load',fetchData)
 window.addEventListener('load',() => {
   fetchData,
   createRandomUser
