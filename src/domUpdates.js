@@ -2,6 +2,8 @@
 
 import recipeData from "./data/recipes.js"
 import usersData from "./data/users.js"
+import {globalRecipesData} from './scripts'
+
 import { filterByTag, filterByName, filterRecipes } from "./functions/filter-recipes.js"
 import { makeCurrentRecipe } from "./functions/current-recipe.js";
 import { calculateCost } from "./functions/calculate-cost.js";
@@ -35,7 +37,9 @@ const userSearchInput = document.querySelector('.user__search')
 // DATAMODEL 
 let savedRecipes = [];
 let currentRecipe = {};
-let currentRecipes = recipeData;
+let currentRecipes;
+// let currentRecipes = globalRecipesData
+
 
 // Modifiers
 const show = (names) => {
@@ -70,9 +74,9 @@ const backFilteredRecipes = () => {
     show([allSection, homeButton]);
 }
 
-const viewRecipes = (event) => {
+const viewRecipes = (event, dataset) => {
   const target = event.target.id;
-  currentRecipes = filterRecipes(recipeData, target)
+  currentRecipes = filterRecipes(dataset, target)
   if (!currentRecipes.length) {
     return null;
   }

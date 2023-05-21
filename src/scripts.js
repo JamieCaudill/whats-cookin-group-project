@@ -17,11 +17,10 @@ viewSearchResults.addEventListener('click', () => {
 })
 userButton.addEventListener('click', showUserPage)
 homeButton.addEventListener('click', showHome)
-//window.addEventListener('load',fetchData)
-window.addEventListener('load',() => {
-  fetchData,
-  createRandomUser
-})
+// window.addEventListener('load',() => {
+//   fetchData,
+//   createRandomUser
+// })
 
 categoriesContainer.addEventListener('click', viewRecipes);
 allContainer.addEventListener('click', selectRecipe)
@@ -33,12 +32,43 @@ userSearchIcon.addEventListener('click', () => {
   searchRecipes(savedRecipes, userSearchInput, userRecipes)
 })
 
+//with test data, make everything work with this first
+// let globalUserData = recipeData;
+// let globalRecipesData = usersData;
+// let globalIngredientsData = ingredientsData;
+
+//once that works get rid of the test data and use the api data instead. start it empty instead.
+
+let globalUserData;
+let globalRecipesData;
+let globalIngredientsData;
+
+window.addEventListener('load',fetchData)
+
 function fetchData() {
   Promise.all([fetchUserData(), fetchRecipesData(), fetchIngredientsData()])
     .then((responses) => {
-      console.log('responses', responses[0].users[0].name)
-      // All data is fetched and global variables are updated
-      // You can manipulate data or update UI here
+     console.log('usersData', responses[0].users)
+     console.log('responses', responses[0].users[0].name)
+     console.log('recipeData', responses[1].recipes)
+     console.log('ingredientsData', responses[2].ingredients)
+     
+       // All data is fetched and global variables are updated
+      //use the api response data
+    globalUserData = responses[0].users
+    globalRecipesData = responses[1].recipes
+    globalIngredientsData = responses[2].ingredients
+
+      // manipulate data or update UI here.
+      // call functions that update the DOM to display the recipes or other.
+      //update what you need to wtih the data
+
+    createRandomUser()
+    // displayRecipes()
     })
     .catch(error => console.error('Error:', error));
 };
+
+// export {
+//   globalRecipesData
+// }

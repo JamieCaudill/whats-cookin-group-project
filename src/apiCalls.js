@@ -1,10 +1,6 @@
 // Your fetch requests will live here!
 console.log('I will be a fetch request!')
 
-let globalUserData = null;
-let globalRecipesData = null;
-let globalIngredientsData = null;
-
 function fetchUserData() {
   return fetch("https://what-s-cookin-starter-kit.herokuapp.com/api/v1/users")
     .then(response => response.json())

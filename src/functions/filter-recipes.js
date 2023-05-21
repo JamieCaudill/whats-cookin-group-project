@@ -37,6 +37,7 @@ const filterByName = (recipeData, name) => {
 
 const filterRecipes = (recipeData, filter) => {
   console.log(filter)
+  console.log(recipeData)
   const recipes = [];
   const lowerCaseFilter = filter.toLowerCase();
   const searchTerms = lowerCaseFilter.split(' ');
