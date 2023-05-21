@@ -1,8 +1,8 @@
 //NOTE: Your DOM manipulation will occur in this file
 
-import recipeData from "./data/recipes.js"
-import usersData from "./data/users.js"
-import {globalRecipesData} from './scripts'
+// import recipeData from "./data/recipes.js"
+// import usersData from "./data/users.js"
+import {usersData} from './scripts.js'
 
 import { filterByTag, filterByName, filterRecipes } from "./functions/filter-recipes.js"
 import { makeCurrentRecipe } from "./functions/current-recipe.js";
