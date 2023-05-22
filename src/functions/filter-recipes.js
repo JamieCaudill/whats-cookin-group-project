@@ -54,7 +54,6 @@ const filterByName = (recipeData, name) => {
 //   }
 //   let uniqueRecipes = [... new Set(recipes)];
 //   return uniqueRecipes;
-// };
 
   const filterRecipes = (recipeData, filter) => {
     if (!filter) return [];
