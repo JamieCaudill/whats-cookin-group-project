@@ -36,21 +36,6 @@ describe('filter recipes', () => {
   })
 });
 
-// describe('filterRecipes', () => {
-//   it('should return recipes filtered by name and tag', () => {
-//     let filteredRecipes = filterRecipes(sampleRecipeData, 'side dish');
-//     let filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
-//     expect(filteredRecipeNames).to.deep.equal(['Elvis Pancakes', "Ambrosia Cupcakes", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
-  //   filteredRecipes = filterRecipes(sampleRecipeData, 'chocolate');
-  //   filteredRecipeNames = filteredRecipes.map(recipe => recipe.name);
-  //   expect(filteredRecipeNames).to.deep.equal(["Loaded Chocolate Chip Pudding Cookie Cups", "Creamy Coconut Yogurt Bowl with Chocolate Granola (Video)"])
-  // })
-
-  // it('should return an empty array if nothing matches the filter', () => {
-  //   let filteredRecipes = filterRecipes(sampleRecipeData, 'gnarwhale');
-  //   expect(filteredRecipes).to.deep.equal([]);
-  // })
-
 describe('filterRecipes', function() {
   it.only('should return an empty array when filter is not provided', function() {
     const recipes = [{name: 'pasta', tags: ['Italian', 'main']}];
