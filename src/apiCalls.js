@@ -1,10 +1,10 @@
 // FETCH REQUESTS //
 
-const fetchRecipes = fetch(`http://localhost:3001/api/v1/recipes`);
-const fetchIngredients = fetch(`http://localhost:3001/api/v1/ingredients`);
-const fetchUsers = fetch(`http://localhost:3001/api/v1/users`);
+const fetchRecipes = fetch(`https://whats-cookin-api.onrender.com/api/v1/recipes`);
+const fetchIngredients = fetch(`https://whats-cookin-api.onrender.com/api/v1/ingredients`);
+const fetchUsers = fetch(`https://whats-cookin-api.onrender.com/api/v1/users`);
 const postSavedRecipe = (data) => {
-  fetch('http://localhost:3001/api/v1/usersRecipes', {
+  fetch('https://whats-cookin-api.onrender.com/api/v1/usersRecipes', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
