@@ -41,7 +41,8 @@ import {
   hide,
   displayRecipesToCook, 
   recipePrint, 
-  createPrinterRecipe 
+  createPrinterRecipe,
+  loading 
 } from './domUpdates.js';
 
 // FETCHED DATA //
@@ -52,6 +53,7 @@ let usersData = [];
 let currentUser = {};
 
 window.addEventListener('load', () => {
+  loading(currentUser);
   Promise.all([fetchRecipes, fetchIngredients, fetchUsers])
   .then(responses => {
     responses.forEach(response => {

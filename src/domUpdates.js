@@ -79,6 +79,12 @@ const backFilteredRecipes = () => {
     show([allSection, homeButton]);
 };
 
+const loading = (currentUser) => {
+  if (!currentUser.name) {
+    userButton.innerText = 'Loading...';
+  }
+};
+
 const viewRecipes = (event) => {
   const target = event.target.id;
   currentRecipes = filterRecipes(recipeData, target);
@@ -267,6 +273,7 @@ export {
   userBackButton,
   currentRecipe,
   recipePrint,
+  loading,
   createPrinterRecipe,
   hide,
   deleteTheRecipe,
