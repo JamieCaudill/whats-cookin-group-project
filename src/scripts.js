@@ -42,7 +42,8 @@ import {
   displayRecipesToCook, 
   recipePrint, 
   createPrinterRecipe,
-  loading 
+  loading,
+  loadingText 
 } from './domUpdates.js';
 
 // FETCHED DATA //
@@ -64,6 +65,7 @@ window.addEventListener('load', () => {
               recipeData = data.recipes;
             } else if (response.url.includes('/ingredients')) {
               ingredientsData = data.ingredients;
+              loadingText.classList.add('class--hidden');
             } else if (response.url.includes('/users')) {
               usersData = data.users;
               currentUser = createRandomUser(usersData)

@@ -97,6 +97,12 @@ h1 {
   width: 100%;
 }
 
+.loading {
+  text-align: center;
+  margin-top: 1em;
+  font-weight: 600;
+}
+
 .categories--category:active {
   transform: scaleY(0.8);
 }

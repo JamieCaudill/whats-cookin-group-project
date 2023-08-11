@@ -40,6 +40,7 @@ const recipePrint = document.querySelector('.recipe__print');
 const home = document.querySelector('.home');
 const printerFriendlyRecipe = document.querySelector('.recipe__printerFriendly');
 const recipeLeft = document.querySelector('.recipe__left');
+const loadingText = document.querySelector('.loading');
 
 
 // DATAMODEL //
@@ -82,6 +83,7 @@ const backFilteredRecipes = () => {
 const loading = (currentUser) => {
   if (!currentUser.name) {
     userButton.innerText = 'Loading...';
+    loadingText.innerText = 'Loading...';
   }
 };
 
@@ -273,6 +275,7 @@ export {
   userBackButton,
   currentRecipe,
   recipePrint,
+  loadingText,
   loading,
   createPrinterRecipe,
   hide,
