@@ -15,6 +15,10 @@ The details of this project are outlined in the project specs
 
 "What's Cookin'?" is a group project completed as a part of Module 2 at Turing School of Software Design's Front-End curriculum. The application hosts a variety of recipes that can be viewed as a whole, by course (salads, hor d'oevres, main courses, sides), or searched by a tag or recipe name to show relevent recipes. When looking at a recipe's page that recipe can be saved to the users saved recipes page. When looking at the saved recipe collection the user may search through their recipes and delete recipes of their choosing.
 
+### 🌐 Live Demo
+
+[View the App here](https://whats-cookin-group-project.vercel.app/)
+
 ## LEARNING GOALS
 
 - Use object and array prototype methods to perform data manipulation
